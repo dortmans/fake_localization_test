@@ -1,0 +1,10 @@
+<launch>
+
+  <!-- Run fake localization compatible with AMCL output -->
+  <node pkg="fake_localization" type="fake_localization" name="fake_localization" output="screen" >
+    <remap from="base_pose_ground_truth" to="odom"/>
+    <param name="global_frame_id " type="string" value="map" />
+  </node>
+  
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find fake_localization_test)/fake_localization.rviz" />
+</launch>

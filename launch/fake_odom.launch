@@ -1,0 +1,8 @@
+<launch>
+
+  <node pkg="odometry_publisher_tutorial" type="odometry_publisher" name="fake_odometry_publisher" />
+  
+  <!-- Alternative, publishing fixed odom -->
+  <!--<node pkg="fake_localization" type="static_odom_broadcaster.py" name="static_odom_broadcaster" />-->
+  
+</launch>

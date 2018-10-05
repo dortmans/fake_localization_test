@@ -1,0 +1,6 @@
+<launch>
+  <node pkg="tf" type="static_transform_publisher" name="fake_localizer" args="0 0 0 0 0 0 1 /map /odom 100" />
+  <node pkg="robot_pose_publisher" type="robot_pose_publisher" name="robot_pose_publisher" >
+    <remap from="robot_pose" to="pose" />
+  </node>
+</launch>
