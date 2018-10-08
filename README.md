@@ -1,4 +1,4 @@
-# face_localization_test
+# fake_localization_test
 
 Test of the [fake_localization](http://wiki.ros.org/fake_localization) package.
 
