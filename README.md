@@ -4,12 +4,12 @@ Test of the [fake_localization](http://wiki.ros.org/fake_localization) package.
 
 Prerequisites installation:
 ```
-sudo apt-get install ros-kinetic-navigation-tutorials ros-kinetic-fake-localization ros-kinetic-robot-pose-publisher 
+sudo apt-get install ros-kinetic-navigation-tutorials ros-kinetic-fake-localization ros-kinetic-robot-pose-publisher
 ```
 
-## Odometry data
+## Generating fake odometry
 
-Launch fake odom publisher to publish odometry on odom topic and odom --> base_link transform on tf:
+Launch fake odom publisher to publish odometry on odom topic and odom --> base_link transform on TF:
 ```
 roslaunch fake_localization_test fake_odom.launch
 ```
@@ -19,19 +19,16 @@ Echo odometry messages on odom topic:
 rostopic echo /odom
 ```
 
-## fake localizer
+## Launching a fake localizer
 
+A localizer has to publish map --> odom transform on TF and could also publish the Pose of the robot (in map coordinates) on a topic.
+
+Launch fake_localization node from the navigation stack:
 ```
-roslaunch navigation_stage move_base_fake_localization_10cm.launch
-```fake localizer
-
-```
-roslaunch navigation_stage move_base_fake_localization_10cm.launch
+roslaunch fake_localization_test fake_localization.launch
 ```
 
-## Our fake localizer
-
-Launch our fake localization node, to publish map --> odom transform:
+Alternative is to launch our simple fake localization approach:
 ```
 roslaunch fake_localization_test our_fake_localization.launch
 ```
@@ -64,5 +61,5 @@ rostopic echo /pose
 
 - [Publishing Odometry Information over ROS](http://wiki.ros.org/navigation/Tutorials/RobotSetup/Odom)
 - [Introduction to tf](http://wiki.ros.org/tf/Tutorials/Introduction%20to%20tf)
+- [fake_localization](http://wiki.ros.org/fake_localization)
 - [robot_pose_publisher](http://wiki.ros.org/robot_pose_publisher)
-
